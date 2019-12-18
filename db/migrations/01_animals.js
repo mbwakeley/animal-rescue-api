@@ -1,8 +1,8 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable("cats", table => {
+  return knex.schema.createTable("animals", table => {
     table.increments();
     table.string("name").notNullable();
-    table.integer("age").notNullable();
+    table.string("age").notNullable();
     table.string("species").notNullable();
     table.string("breed").notNullable();
     table.string("color").notNullable();
@@ -16,5 +16,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable("cats");
+  return knex.schema.dropTable("animals");
 };

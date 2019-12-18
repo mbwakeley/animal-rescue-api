@@ -7,8 +7,7 @@ const logger = require("morgan");
 const knexInstance = require("./db/knex");
 const { Model } = require("objection");
 
-const dogRoutes = require("./routes/dogs");
-const catRoutes = require("./routes/cats");
+const animalRoutes = require("./routes/animals");
 
 Model.knex(knexInstance);
 
@@ -22,8 +21,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/cats", catRoutes);
-app.use("/dogs", dogRoutes);
+app.use("/animals", animalRoutes);
 
 app.listen(port, function() {
   console.log("listening on port: ", port);
